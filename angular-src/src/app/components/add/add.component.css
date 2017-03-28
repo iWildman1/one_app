@@ -1,0 +1,7 @@
+label {
+    position: absolute;
+}
+
+.add-project-form input[type='text'] {
+    padding-top: 28px;
+}

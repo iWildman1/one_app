@@ -1,1 +1,263 @@
-/* You can add global styles to this file, and also import other style files */
+/* MAIN SCSS FILE. DO NOT ADD STYLES INTO HERE, PLEASE USE THE RELEVANT PARTIALS FILE */
+/* BASE SCSS PARTIAL. USE FOR BASE STYLE CONFIGURATION */
+* {
+  box-sizing: border-box; }
+
+/* TYPOGRAPHY SCSS PARTIAL. ANY CODE RELATED TO FONTS GOES IN HERE */
+h1, h2, h3, h4, h5, h6, strong, p, a, label, input, li, table, th, td {
+  font-family: "Montserrat", sans-serif; }
+
+* {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400; }
+
+html {
+  font-size: 17px; }
+
+  body {
+    background-color: #F8F8F8;
+  }
+
+h1 {
+  font-weight: 600; }
+
+.main-lead {
+  margin-top: 0; }
+
+.homepage {
+  display: flex;
+  height: 100vh; }
+
+.body-center {
+  align-self: center;
+  margin: 0 auto;
+  text-align: center; }
+
+.button-group-half {
+  width: 50%;
+  float: left; }
+  .button-group-half a:hover {
+    color: white;
+    text-decoration: none; }
+
+.button {
+  background-color: #DB5656;
+  padding: 7px;
+  width: 140px;
+  color: white;
+  font-weight: 300;
+  border: 5px solid #DB5656;
+  transition: all 0.1s ease; }
+  .button:hover {
+    background-color: #e27878 !important;
+    border: 5px solid #e27878; }
+
+.button.button-secondary {
+  background-color: transparent; }
+
+/* HOMEPAGE-SPECIFIC STYLES. IF HOMEPAGE STYLES DON'T FIT INTO ANOTHER CATEGORY, PUT THEM HERE */
+.homepage {
+  background: linear-gradient(rgba(93, 34, 34, 0.47), rgba(93, 34, 34, 0.47)), url("/img/background-main.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: white; }
+  .homepage h1.main-lead {
+    font-size: 11em; }
+  .homepage p {
+    font-size: 1.3em;
+    font-weight: 300; }
+
+.button-group {
+  margin-top: 20px; }
+
+.home-cta:first-child {
+  margin-right: 10px; }
+
+.home-cta:last-child {
+  margin-left: 10px; }
+
+.left-holder-container {
+  height: 100%;
+  width: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+
+
+
+.left-holder-container.login-background {
+  background-image: linear-gradient(rgba(93, 34, 34, 0.47), rgba(93, 34, 34, 0.47)), url("/img/login-background.jpg"); }
+
+.left-holder-container.register-background {
+  background-image: linear-gradient(rgba(93, 34, 34, 0.47), rgba(93, 34, 34, 0.47)), url("/img/register-background.jpg"); }
+
+.right-holder-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 450px;
+  background-color: white;
+  padding: 40px; }
+  .right-holder-container h1 {
+    font-weight: 700;
+    font-size: 4em;
+    margin-bottom: 20px; }
+  .right-holder-container p {
+    color: #A5A5A5;
+    font-weight: 300;
+    margin-bottom: 50px; }
+  .right-holder-container form label {
+    text-transform: uppercase;
+    margin-bottom: -60px;
+    margin-left: 10px;
+    margin-top: 5px;
+    font-weight: 600; }
+  .right-holder-container form input[type='text'], .right-holder-container form input[type='password'] {
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 23px 10px 5px 10px;
+    font-weight: 300;
+    color: #404250;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px; }
+  .right-holder-container form .button {
+    margin-top: 30px; }
+
+.admin {
+  background-color: #F8F8F8; }
+
+nav {
+  height: 70px;
+  background-color: #393939;
+  position: fixed;
+  width: 100%;
+  top: 0; }
+  nav .nav-container {
+    display: flex;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center; }
+    nav .nav-container h1 {
+      color: white;
+      margin: 0;
+      padding: 0; }
+    nav .nav-container .nav-list {
+      list-style-type: none;
+      margin: 0; }
+      nav .nav-container .nav-list li {
+        display: inline-block;
+        color: white;
+        font-weight: 300;
+        padding-left: 10px; }
+      nav .nav-container .nav-list li.nav-username {
+        font-weight: 600; }
+      nav .nav-container .nav-list .nav-button {
+        background-color: #DB5656;
+        padding: 8px 14px;
+        margin-left: 10px;
+        color: white;
+        transition: all 0.1s ease; }
+        nav .nav-container .nav-list .nav-button:hover {
+          background-color: #e27878;
+          text-decoration: none; }
+
+#main-admin-body {
+  width: 80%;
+  margin: 120px auto; }
+  #main-admin-body .project-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px; }
+  #main-admin-body h1 {
+    display: inline-block;
+    margin-top: 10px; }
+  #main-admin-body .add-new-button {
+    padding: 6px 14px;
+    margin-left: 30px;
+    background-color: #3ebba1;
+    color: white;
+    transition: all 0.1s ease; }
+    #main-admin-body .add-new-button:hover {
+      text-decoration: none;
+      background-color: #74d1be; }
+    #main-admin-body .add-new-button.overview-button {
+      background-color: #DB5656; }
+      #main-admin-body .add-new-button.overview-button:hover {
+        background-color: #e48080; }
+  #main-admin-body .deployment-block {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    #main-admin-body .deployment-block h2 {
+      margin-top: 0;
+      font-weight: 600;
+      margin-bottom: 30px; }
+    #main-admin-body .deployment-block .deployment-left .deployment-data-table {
+      font-size: 0.95em; }
+      #main-admin-body .deployment-block .deployment-left .deployment-data-table th, #main-admin-body .deployment-block .deployment-left .deployment-data-table td {
+        padding: 0 10px; }
+      #main-admin-body .deployment-block .deployment-left .deployment-data-table td {
+        font-weight: 300;
+        opacity: 0.7; }
+    #main-admin-body .deployment-block .deployment-right .button-admin {
+      padding: 10px 20px;
+      color: white;
+      transition: all 0.1s ease; }
+      #main-admin-body .deployment-block .deployment-right .button-admin:hover {
+        text-decoration: none; }
+      #main-admin-body .deployment-block .deployment-right .button-admin.button-force {
+        background-color: #db9456; }
+        #main-admin-body .deployment-block .deployment-right .button-admin.button-force:hover {
+          background-color: #e4af80; }
+      #main-admin-body .deployment-block .deployment-right .button-admin.button-delete {
+        background-color: #DB5656; }
+        #main-admin-body .deployment-block .deployment-right .button-admin.button-delete:hover {
+          background-color: #e48080; }
+      #main-admin-body .deployment-block .deployment-right .button-admin.button-edit {
+        background-color: #569DDB; }
+        #main-admin-body .deployment-block .deployment-right .button-admin.button-edit:hover {
+          background-color: #80b5e4; }
+
+.add-project-form {
+  background-color: white;
+  padding: 30px; }
+  .add-project-form h2 {
+    margin-top: 0;
+    font-size: 2em;
+    font-weight: 600; }
+  .add-project-form .form-splitter {
+    margin-top: 30px; }
+  .add-project-form label {
+    text-transform: uppercase;
+    margin-bottom: -50px;
+    margin-left: 10px;
+    padding-top: 7px; }
+  .add-project-form input[type='text'], .add-project-form input[type='password'] {
+    display: block;
+    width: 100%;
+    padding: 20px 10px 5px 10px;
+    font-weight: 300;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #CCCCCC; }
+  .add-project-form input[type='submit'] {
+    background-color: #3ebba1;
+    border: none;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+    transition: all 0.1s ease; }
+    .add-project-form input[type='submit']:hover {
+      background-color: #61cbb5; }

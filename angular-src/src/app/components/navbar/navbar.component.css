@@ -1,0 +1,11 @@
+a {
+    color: white;
+}
+
+a:hover, a:active {
+   text-decoration: none;
+}
+
+.brand-link {
+    font-weight: 600;
+}
