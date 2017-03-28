@@ -261,3 +261,7 @@ nav {
     transition: all 0.1s ease; }
     .add-project-form input[type='submit']:hover {
       background-color: #61cbb5; }
+
+      .no-margin-text p {
+    margin-bottom: 0px !important;
+}

@@ -5,11 +5,11 @@
       </div>
       <div class="nav-right">
           <ul class="nav-list">
-              <li class="nav-username"><a routerLink="/dashboard" >Daniel Wildman</a></li>
-              <li>Dashboard</li>
+              <li class="nav-username" *ngIf='user'><a routerLink="/dashboard">{{user.name}}</a></li>
+              <li><a routerLink="/dashboard" class="nav-link">Dashboard</a></li>
               <li>Settings</li>
               <li>
-                  <a href="#" class="nav-button">Log Out</a>
+                  <a href="#" (click)="onLogoutClick()" class="nav-button">Log Out</a>
               </li>
           </ul>
       </div>

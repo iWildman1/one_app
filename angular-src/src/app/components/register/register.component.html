@@ -6,21 +6,23 @@
         <h1>one.</h1>
         <p>Create an account with us.</p>
 
-        <form action="/admin/" id="login-form">
+        <flash-messages></flash-messages>
+
+        <form (submit)="onRegisterSubmit()" id="login-form">
             <label for="login-username">Username</label>
-            <input type="text" name="login-username" placeholder="Username">
+            <input type="text" name="login-username" [(ngModel)]="username" placeholder="Username">
 
             <label for="login-email">Email Address</label>
-            <input type="text" name="login-email" placeholder="Email Address">
+            <input type="text" name="login-email" [(ngModel)]="email" placeholder="Email Address">
 
             <label for="login-name">Your Name</label>
-            <input type="text" name="login-name" placeholder="John Doe">
+            <input type="text" name="login-name" [(ngModel)]="name" placeholder="John Doe">
 
             <label for="login-password">Password</label>
-            <input type="password" name="login-password" placeholder="Password">
+            <input type="password" name="login-password" [(ngModel)]="password" placeholder="Password">
 
             <label for="login-passwordconfirmation">Password (Once More...)</label>
-            <input type="password" name="login-passwordconfirmation" placeholder="Password">
+            <input type="password" name="login-passwordconfirmation" [(ngModel)]="passwordconfirmation" placeholder="Password">
 
             <input type="submit" class="button button-main" value="Sign Up">
         </form>

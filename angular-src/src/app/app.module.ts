@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import { FlashMessagesModule } from 'angular2-flash-messages';
+import { AuthGuard } from './guards/auth.guard';
+import { ReverseAuthGuard } from './guards/reverseauth.guard';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -13,6 +16,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AddComponent } from './components/add/add.component';
 import { EditComponent } from './components/edit/edit.component';
 
+import { ValidateService } from './services/validate.service';
+import { AuthService } from './services/auth.service';
+
 const appRoutes: Routes = [
   {
     path: "",
@@ -20,23 +26,28 @@ const appRoutes: Routes = [
   },
   {
     path: "register",
-    component: RegisterComponent
+    component: RegisterComponent,
+    canActivate: [ReverseAuthGuard]
   },
   {
     path: "login",
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [ReverseAuthGuard]
   },
   {
     path: "dashboard",
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "dashboard/new",
-    component: AddComponent
+    component: AddComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "dashboard/edit/:id",
-    component: EditComponent
+    component: EditComponent,
+    canActivate: [AuthGuard]
   }
 ]
 
@@ -55,9 +66,15 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FlashMessagesModule
   ],
-  providers: [],
+  providers: [
+    ValidateService,
+    AuthService,
+    AuthGuard,
+    ReverseAuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
