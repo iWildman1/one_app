@@ -25,7 +25,7 @@ const users = require('./routes/users');
 const projects = require('./routes/projects');
 
 //Set up port variable
-const port = 3000;
+const port = process.env.PORT || 8080;
 
 //Allow CORS
 app.use(cors());

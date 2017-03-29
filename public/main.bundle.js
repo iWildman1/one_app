@@ -28,31 +28,31 @@ var ProjectService = (function () {
     ProjectService.prototype.getProjects = function (username) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"];
         headers.append('Content-Type', 'application/json');
-        return this.http.get('http://localhost:3000/projects/find/' + username, { headers: headers })
+        return this.http.get('projects/find/' + username, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     ProjectService.prototype.getSingleProject = function (id) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"];
         headers.append('Content-Type', 'application/json');
-        return this.http.get('http://localhost:3000/projects/find/id/' + id, { headers: headers })
+        return this.http.get('projects/find/id/' + id, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     ProjectService.prototype.postProject = function (projectData) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"];
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3000/projects/create', projectData, { headers: headers })
+        return this.http.post('projects/create', projectData, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     ProjectService.prototype.updateProject = function (id, projectData) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"];
         headers.append('Content-Type', 'application/json');
-        return this.http.put('http://localhost:3000/projects/update/' + id, projectData, { headers: headers })
+        return this.http.put('projects/update/' + id, projectData, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     ProjectService.prototype.deleteProject = function (id) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"];
         headers.append('Content-Type', 'application/json');
-        return this.http.delete('http://localhost:3000/projects/delete/' + id, { headers: headers })
+        return this.http.delete('projects/delete/' + id, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     ProjectService = __decorate([

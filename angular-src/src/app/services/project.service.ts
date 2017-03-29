@@ -14,7 +14,7 @@ export class ProjectService {
 
     headers.append('Content-Type', 'application/json');
 
-    return this.http.get('http://localhost:3000/projects/find/' + username, {headers: headers})
+    return this.http.get('projects/find/' + username, {headers: headers})
       .map(res => res.json());
   }
 
@@ -23,7 +23,7 @@ export class ProjectService {
 
     headers.append('Content-Type', 'application/json');
 
-    return this.http.get('http://localhost:3000/projects/find/id/' + id, {headers: headers})
+    return this.http.get('projects/find/id/' + id, {headers: headers})
       .map(res => res.json());
   }
 
@@ -32,7 +32,7 @@ export class ProjectService {
 
     headers.append('Content-Type', 'application/json');
 
-    return this.http.post('http://localhost:3000/projects/create', projectData, {headers: headers})
+    return this.http.post('projects/create', projectData, {headers: headers})
       .map(res => res.json());
   }
 
@@ -41,7 +41,7 @@ export class ProjectService {
 
     headers.append('Content-Type', 'application/json');
 
-    return this.http.put('http://localhost:3000/projects/update/' + id, projectData, {headers: headers})
+    return this.http.put('projects/update/' + id, projectData, {headers: headers})
       .map(res => res.json());
   }
 
@@ -50,7 +50,7 @@ export class ProjectService {
 
     headers.append('Content-Type', 'application/json');
 
-    return this.http.delete('http://localhost:3000/projects/delete/' + id, {headers: headers})
+    return this.http.delete('projects/delete/' + id, {headers: headers})
       .map(res => res.json());
   }
 }
