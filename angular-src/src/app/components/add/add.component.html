@@ -7,45 +7,43 @@
     </div>
     
     <div class="add-project-form">
-        <form action="#" id="add-proect">
+        <flash-messages></flash-messages>
+        <form (submit)="onAddSubmit()" id="add-proect">
             <h2>General Project Info</h2>
             
             <label for="project-name">Project Name</label>
-            <input type="text" name="project-name" placeholder="Deployment 1">
+            <input type="text" name="project-name" [(ngModel)]="name" placeholder="Deployment 1">
 
             <label for="project-manager">Project Manager</label>
-            <input type="text" name="project-manager" placeholder="Firstname Lastname">
+            <input type="text" name="project-manager" [(ngModel)]="owner_pretty" placeholder="Firstname Lastname">
 
             <h2 class="form-splitter">Deployment Info</h2>
             
-            <label for="github-repo">GitHub Repo</label>
-            <input type="text" name="github-repo" placeholder="Repo Name">
+            <label for="github-filelink">GitHub File Link</label>
+            <input type="text" name="github-filelink" [(ngModel)]="github_filelink" placeholder="Link to ZIP file">
 
-            <label for="github-branch">GitHub Branch</label>
-            <input type="text" name="github-branch" placeholder="Master">
 
             <div class="half">
                 <label for="ftp-server">FTP Server</label>
-                <input type="text" name="ftp-server" placeholder="ftp.server.com">
+                <input type="text" name="ftp-server" [(ngModel)]="ftp_server" placeholder="ftp.server.com">
             </div>
 
             <div class="half">
                 <label for="ftp-port">FTP Port</label>
-                <input type="text" name="ftp-port" placeholder="21">
+                <input type="text" name="ftp-port" [(ngModel)]="ftp_port" placeholder="21">
             </div>
 
             <div class="half">
                 <label for="ftp-username">FTP Username</label>
-                <input type="text" name="ftp-username" placeholder="username">
+                <input type="text" name="ftp-username" [(ngModel)]="ftp_username" placeholder="username">
             </div>
 
             <div class="half">
                 <label for="ftp-password">FTP Password</label>
-                <input type="password" name="ftp-password" placeholder="Password">
+                <input type="password" name="ftp-password" [(ngModel)]="ftp_password" placeholder="Password">
             </div>
 
             <input type="submit" class="new-update-submit" value="Add/Update Deployment">
         </form>
     </div>
-
 </section>

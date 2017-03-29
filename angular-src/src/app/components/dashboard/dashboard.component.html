@@ -7,9 +7,12 @@
   </div>
   
   <div class="body-container">
-      <div class="deployment-block">
+
+
+    <flash-messages></flash-messages>
+      <div *ngFor="let project of projects" class="deployment-block">
           <div class="deployment-left">
-              <h2>Deployment 1</h2>
+              <h2>{{project.name}}</h2>
               <table class="deployment-data-table">
                   <tr>
                       <th>Author</th>
@@ -17,61 +20,19 @@
                       <th>Deployment Iteration</th>
                   </tr>
                   <tr>
-                      <td>Daniel Wildman</td>
-                      <td>02/02/2017</td>
-                      <td>17</td>
+                      <td>{{project.owner_pretty}}</td>
+                      <td>{{project.deployment_date | date:'short'}}</td>
+                      <td>{{project.iteration}}</td>
                   </tr>
               </table>
           </div>
           <div class="deployment-right">
-              <a href="#" class="button-admin button-edit">Edit</a>
+              <a routerLink='/dashboard/edit/{{project._id}}' class="button-admin button-edit">Edit</a>
               <a href="#" class="button-admin button-force">Force</a>
-              <a href="#" class="button-admin button-delete">Delete</a>
-          </div>
-      </div>
-      <div class="deployment-block">
-          <div class="deployment-left">
-              <h2>Deployment 1</h2>
-              <table class="deployment-data-table">
-                  <tr>
-                      <th>Author</th>
-                      <th>Last Deployed</th>
-                      <th>Deployment Iteration</th>
-                  </tr>
-                  <tr>
-                      <td>Daniel Wildman</td>
-                      <td>02/02/2017</td>
-                      <td>17</td>
-                  </tr>
-              </table>
-          </div>
-          <div class="deployment-right">
-              <a href="#" class="button-admin button-edit">Edit</a>
-              <a href="#" class="button-admin button-force">Force</a>
-              <a href="#" class="button-admin button-delete">Delete</a>
-          </div>
-      </div>
-      <div class="deployment-block">
-          <div class="deployment-left">
-              <h2>Deployment 1</h2>
-              <table class="deployment-data-table">
-                  <tr>
-                      <th>Author</th>
-                      <th>Last Deployed</th>
-                      <th>Deployment Iteration</th>
-                  </tr>
-                  <tr>
-                      <td>Daniel Wildman</td>
-                      <td>02/02/2017</td>
-                      <td>17</td>
-                  </tr>
-              </table>
-          </div>
-          <div class="deployment-right">
-              <a href="#" class="button-admin button-edit">Edit</a>
-              <a href="#" class="button-admin button-force">Force</a>
-              <a href="#" class="button-admin button-delete">Delete</a>
+              <a (click)="onDeleteClick($event)" data-id="{{project._id}}" class="button-admin button-delete">Delete</a>
           </div>
       </div>
   </div>
+
+
 </section>

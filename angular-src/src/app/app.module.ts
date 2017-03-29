@@ -18,6 +18,7 @@ import { EditComponent } from './components/edit/edit.component';
 
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
+import { ProjectService } from './services/project.service';
 
 const appRoutes: Routes = [
   {
@@ -73,7 +74,8 @@ const appRoutes: Routes = [
     ValidateService,
     AuthService,
     AuthGuard,
-    ReverseAuthGuard
+    ReverseAuthGuard,
+    ProjectService
   ],
   bootstrap: [AppComponent]
 })
